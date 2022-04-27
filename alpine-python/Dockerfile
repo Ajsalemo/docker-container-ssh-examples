@@ -8,8 +8,6 @@ COPY ./ /app/
 COPY sshd_config /etc/ssh/
 
 # Start and enable SSH
-WORKDIR /etc/ssh/
-# Start and enable SSH
 RUN apk add openssh \
      && echo "root:Docker!" | chpasswd \
      && chmod +x /app/init_container.sh \
