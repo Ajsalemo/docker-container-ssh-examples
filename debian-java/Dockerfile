@@ -5,9 +5,9 @@ RUN mvn -f /app/pom.xml clean package
 
 FROM openjdk:11-jre
 COPY --from=build /app/target/ssh-0.0.1-SNAPSHOT.jar /app/ssh-0.0.1-SNAPSHOT.jar
-
-COPY sshd_config /etc/ssh/
-
+COPY --from=build /app/init_container.sh /app/
+COPY --from=build /app/sshd_config /etc/ssh/
+ 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends dialog \
     && apt-get install -y --no-install-recommends openssh-server \
