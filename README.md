@@ -1,4 +1,4 @@
-# docker-container-ssh-examples
+# Docker Container SSH Examples
 Examples of various stacks or OS types integrated with SSH.
 
 - `debian` examples will work with both `Debian` and `Ubuntu` Docker Image bases.
